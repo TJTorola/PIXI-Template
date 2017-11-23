@@ -12,7 +12,9 @@ module.exports = {
   output: {
     path: DIST_DIR,
     publicPath: "/",
-    filename: "pixi.js"
+    filename: "pixi.js",
+    libraryTarget: "umd",
+    library: "pixi"
   },
   plugins: [
     new CopyWebpackPlugin([
