@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const DIST_DIR = path.resolve(__dirname, "dist")
 const ENTRY_FILE = path.resolve(__dirname, "src/js/index.js")
+const JS_DIR = path.resolve(__dirname, "src/js")
 const STATIC_DIR = path.resolve(__dirname, "src/static")
 
 module.exports = {
@@ -32,6 +33,11 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  resolve: {
+    alias: {
+      "~": JS_DIR
+    }
   },
   devServer: {
     contentBase: DIST_DIR,
